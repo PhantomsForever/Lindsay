@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Lindsay/bin/Debug
+/Lindsay/obj/Debug/Lindsay.exe
+/Lindsay/obj/Debug/Lindsay.pdb
+/Lindsay/obj/Debug/Lindsay.csprojResolveAssemblyReference.cache
+/Lindsay/obj/Debug/Lindsay.csproj.FileListAbsolute.txt
+/Lindsay/obj/Debug/Lindsay.csproj.CoreCompileInputs.cache
+/Lindsay/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+/LindsayPlugin/bin/Debug
+/LindsayPlugin/obj/Debug/LindsayPlugin.pdb
+/LindsayPlugin/obj/Debug/LindsayPlugin.dll
+/LindsayPlugin/obj/Debug/LindsayPlugin.csprojResolveAssemblyReference.cache
+/LindsayPlugin/obj/Debug/LindsayPlugin.csproj.FileListAbsolute.txt
+/LindsayPlugin/obj/Debug/LindsayPlugin.csproj.CoreCompileInputs.cache

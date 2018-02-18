@@ -14,7 +14,7 @@ namespace Lindsay.Core.Plugin
     public class PluginManager : MarshalByRefObject, IPluginManager
     {
         private List<string> PossiblePlugins = new List<string>();
-        private Dictionary<string, Plugin> Plugins = new Dictionary<string, Plugin>();
+        public Dictionary<string, Plugin> Plugins = new Dictionary<string, Plugin>();
         private PluginSandbox sandbox;
         private static string PluginPath
         {
