@@ -1,4 +1,9 @@
 # Lindsay
 The modular server used by Phantoms Forever
 
-TODO, write readme lol
+The current code is not yet useable for production!
+
+TODO
+Plugins(already working on)
+Web interface?(maybe in the future)
+GUI
