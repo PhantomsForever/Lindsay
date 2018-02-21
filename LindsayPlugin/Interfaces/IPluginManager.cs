@@ -8,6 +8,6 @@ namespace LindsayPlugin.Interfaces
 {
     public interface IPluginManager
     {
-        
+        void RestartWebServer();
     }
 }

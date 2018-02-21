@@ -15,3 +15,10 @@
 /LindsayPlugin/obj/Debug/LindsayPlugin.csprojResolveAssemblyReference.cache
 /LindsayPlugin/obj/Debug/LindsayPlugin.csproj.FileListAbsolute.txt
 /LindsayPlugin/obj/Debug/LindsayPlugin.csproj.CoreCompileInputs.cache
+*.lock
+*.ide
+*.ide-shm
+*.ide-wal
+*.ide
+*.ide
+*.cache

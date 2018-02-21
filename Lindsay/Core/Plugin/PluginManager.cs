@@ -1,4 +1,5 @@
-﻿using LindsayPlugin;
+﻿using Lindsay.Forms;
+using LindsayPlugin;
 using LindsayPlugin.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Lindsay.Core.Plugin
     {
         private List<string> PossiblePlugins = new List<string>();
         public Dictionary<string, Plugin> Plugins = new Dictionary<string, Plugin>();
+        private Dictionary<Plugin, AppDomain> PluginDomains = new Dictionary<Plugin, AppDomain>();
         private PluginSandbox sandbox;
         private static string PluginPath
         {
@@ -73,6 +75,7 @@ namespace Lindsay.Core.Plugin
             {
                 domain.AssemblyResolve += Domain_AssemblyResolve;
                 domain.UnhandledException += Domain_UnhandledException;
+                PluginDomains.Add(plugin, domain);
                 type = domain.CreateInstanceAndUnwrap(plugin.File, (plugin.EntryType as Type).FullName) as LPlugin;
                 type.Load(this);
             }
@@ -85,15 +88,34 @@ namespace Lindsay.Core.Plugin
 
             }
         }
+        public void UnloadPlugin(Plugin plugin)
+        {
+            try
+            {
+                var domain = PluginDomains[plugin];
+                plugin.EntryType.Unload();
+                domain.AssemblyResolve -= Domain_AssemblyResolve;
+                domain.UnhandledException -= Domain_UnhandledException;
+                AppDomain.Unload(domain);
+                PluginDomains.Remove(plugin);
+            }
+            catch(Exception)
+            {
 
+            }
+        }
+        public void RestartWebServer()
+        {
+            FrmMain.Instance.wServer.Restart();
+        }
         private void Domain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
-            throw new NotImplementedException();
+            
         }
 
         private Assembly Domain_AssemblyResolve(object sender, ResolveEventArgs args)
         {
-            throw new NotImplementedException();
+            return null;
         }
     }
 }

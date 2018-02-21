@@ -14,5 +14,14 @@ namespace Lindsay.Core.Web
         {
             _webApplication = WebApp.Start<Startup>("http://*");
         }
+        public void Stop()
+        {
+            _webApplication.Dispose();
+        }
+        public void Restart()
+        {
+            Stop();
+            Start();
+        }
     }
 }
